@@ -9,7 +9,7 @@ const defaultState = [];
 function all(state = defaultState, action) {
   if (action.type === 'FETCHED_POST') {
     const post = action.payload;
-    return state.find(x => post.id === x) ? state : [...state, action.payload.id];
+    return state.find(x => post.cuid === x) ? state : [...state, action.payload.cuid];
   }
 
   return state;

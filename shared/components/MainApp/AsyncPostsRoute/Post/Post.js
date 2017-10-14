@@ -15,17 +15,17 @@ export function Post({ post }) {
     return null;
   }
 
-  const { title, body } = post;
+  const { name, content } = post;
 
   return (
     <div>
-      <Helmet title={`Posts - ${title}`} />
+      <Helmet title={`Posts - ${name}`} />
 
       <h1>
-        {title}
+        {name}
       </h1>
       <div>
-        {body}
+        {content}
       </div>
     </div>
   );
@@ -33,7 +33,7 @@ export function Post({ post }) {
 
 function mapStateToProps(state, { match }) {
   return {
-    post: FromState.getPostById(state, match.params.id),
+    post: FromState.getPostById(state, match.params.cuid),
   };
 }
 
@@ -67,18 +67,18 @@ export default compose(
 
       // Execute the redux-thunk powered action that returns a Promise and
       // fetches the post.
-      return fetchPost(match.params.id);
+      return fetchPost(match.params.cuid);
     },
     // Any time the post id changes we need to trigger the work.
     shouldWorkAgain: (prevProps, nextProps) =>
-      prevProps.match.params.id !== nextProps.match.params.id,
+      prevProps.match.params.cuid !== nextProps.match.params.cuid,
   }),
 )(Post);
 
 Post.propTypes = {
   post: PropTypes.shape({
-    title: string,
-    body: string,
+    name: string,
+    content: string,
   }),
 };
 

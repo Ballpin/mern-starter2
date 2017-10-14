@@ -6,16 +6,16 @@ const AsyncPostsRoute = () =>
   (<div>
     <ul>
       <li>
-        <Link to="/posts/1">Post 1</Link>
+        <Link to="/posts/cikqgkv4q01ck7453ualdn3hf">Post 1</Link>
       </li>
       <li>
-        <Link to="/posts/2">Post 2</Link>
+        <Link to="/posts/cikqgkv4q01ck7453ualdn3hd">Post 2</Link>
       </li>
     </ul>
 
     <hr />
 
-    <Route path="/posts/:id" component={Post} />
+    <Route path="/posts/:cuid" component={Post} />
   </div>);
 
 export default AsyncPostsRoute;

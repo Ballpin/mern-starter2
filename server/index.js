@@ -13,7 +13,7 @@ import serviceWorker from './middleware/serviceWorker';
 import offlinePage from './middleware/offlinePage';
 import errorHandlers from './middleware/errorHandlers';
 import config from '../config';
-// import dummyData from './dummyData';
+import dummyData from './dummyData';
 
 // Server Routes
 import PostRoutes from './routes/Post.routes';
@@ -35,7 +35,7 @@ mongoose.connect(config('db.mongoURL'), (error) => {
   }
 
   // feed some dummy data in DB.
-  // dummyData();
+  dummyData();
 });
 
 // Gzip compress the responses.

@@ -14,12 +14,12 @@ const posts = combineReducers({
 // -----------------------------------------------------------------------------
 // EXPORTED SELECTORS
 
-export function getById(state, id) {
-  return FromById.getById(state.byId, id);
+export function getById(state, cuid) {
+  return FromById.getById(state.byId, cuid);
 }
 
 export function getAll(state) {
-  return FromAll.getAll(state.all).map(id => getById(state, id));
+  return FromAll.getAll(state.all).map(cuid => getById(state, cuid));
 }
 
 // -----------------------------------------------------------------------------

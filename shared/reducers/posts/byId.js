@@ -10,7 +10,7 @@ function byId(state = defaultState, action) {
   if (action.type === 'FETCHED_POST') {
     return {
       ...state,
-      [action.payload.id]: action.payload,
+      [action.payload.cuid]: action.payload,
     };
   }
 
@@ -20,8 +20,8 @@ function byId(state = defaultState, action) {
 // -----------------------------------------------------------------------------
 // EXPORTED SELECTORS
 
-export function getById(state, id) {
-  return state[id];
+export function getById(state, cuid) {
+  return state[cuid];
 }
 
 // -----------------------------------------------------------------------------

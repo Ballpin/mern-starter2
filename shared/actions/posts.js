@@ -1,20 +1,20 @@
 /* eslint-disable import/prefer-default-export */
 
-function fetching(id) {
-  return { type: 'FETCHING_POST', payload: id };
+function fetching(cuid) {
+  return { type: 'FETCHING_POST', payload: cuid };
 }
 
 function fetched(post) {
   return { type: 'FETCHED_POST', payload: post };
 }
 
-export function fetch(id) {
+export function fetch(cuid) {
   return (dispatch, getState, { axios }) => {
-    dispatch(fetching(id));
+    dispatch(fetching(cuid));
 
     return (
       axios
-        .get(`https://jsonplaceholder.typicode.com/posts/${id}`)
+        .get(`/api/posts/${cuid}`)
         .then(({ data }) => dispatch(fetched(data)))
         // We use 'react-jobs' to call our actions.  We don't want to return
         // the actual action to the 'react-jobs' withJob as it will cause

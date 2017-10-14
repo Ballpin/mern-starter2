@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
 // -----------------------------------------------------------------------------
 // EXPORTED SELECTORS
 
-export function getPostById(state, id) {
-  return FromPosts.getById(state.posts, id);
+export function getPostById(state, cuid) {
+  return FromPosts.getById(state.posts, cuid);
 }
 
 // -----------------------------------------------------------------------------
