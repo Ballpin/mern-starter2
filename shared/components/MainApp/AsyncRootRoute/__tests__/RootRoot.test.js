@@ -3,11 +3,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import HomeRoute from '../HomeRoute';
+import RootRoute from '../RootRoute';
 
-describe.skip('<HomeRoute />', () => {
+describe.skip('<RootRoute />', () => {
   test('renders', () => {
-    const wrapper = shallow(<HomeRoute />);
+    const wrapper = shallow(<RootRoute />);
     expect(wrapper).toMatchSnapshot();
   });
 });
