@@ -38,3 +38,6 @@ npm-debug.log
 
 # OSX Files
 .DS_Store
+
+# Ignore Database Storage
+.db

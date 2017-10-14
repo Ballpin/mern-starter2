@@ -305,6 +305,10 @@ const values = {
       return webpackConfig;
     },
   },
+  db: {
+    mongoURL: process.env.MONGO_URL || 'mongodb://localhost:27017/booking-db',
+    port: process.env.PORT || 8000,
+  },
 };
 
 // This protects us from accidentally including this configuration in our
