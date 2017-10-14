@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Post /> renders the snapshot 1`] = `
+<div>
+  <HelmetWrapper
+    encodeSpecialCharacters={true}
+    title="Posts - Test"
+  />
+  <h1>
+    Test
+  </h1>
+  <div>
+    Test this post
+  </div>
+</div>
+`;
