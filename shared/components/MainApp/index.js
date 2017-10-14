@@ -7,11 +7,13 @@ import Helmet from 'react-helmet';
 
 import config from '../../../config';
 
+import routes from '../../routes';
+
 import './globals.css';
 
 import Header from './Header';
 
-function DemoApp() {
+function MainApp() {
   return (
     <div style={{ padding: '2rem' }}>
       <Helmet>
@@ -110,10 +112,10 @@ function DemoApp() {
       </Helmet>
       <Header />
       <div style={{ paddingTop: '2rem', paddingBottom: '2rem' }}>
-        {renderRoutes(this.props.route.routes)}
+        {renderRoutes(routes)}
       </div>
     </div>
   );
 }
 
-export default DemoApp;
+export default MainApp;

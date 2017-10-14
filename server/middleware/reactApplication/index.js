@@ -6,10 +6,11 @@ import { JobProvider, createJobContext } from 'react-jobs';
 import asyncBootstrapper from 'react-async-bootstrapper';
 import { Provider } from 'react-redux';
 import Helmet from 'react-helmet';
+
 import configureStore from '../../../shared/redux/configureStore';
 
 import config from '../../../config';
-import DemoApp from '../../../shared/components/DemoApp';
+import MainApp from '../../../shared/components/MainApp';
 import ServerHTML from './ServerHTML';
 
 /**
@@ -57,7 +58,7 @@ export default function reactApplicationMiddleware(request, response) {
       <JobProvider jobContext={jobContext}>
         <StaticRouter location={request.url} context={reactRouterContext}>
           <Provider store={store}>
-            <DemoApp />
+            <MainApp />
           </Provider>
         </StaticRouter>
       </JobProvider>

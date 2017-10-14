@@ -1,12 +1,13 @@
-import AppRoot from '../components/AppRoot';
-import AsyncCounterRoute from '../components/AppRoot/AsyncCounterRoute';
-import AsyncPostsRoute from '../components/AppRoot/AsyncPostsRoute';
-import AsyncAboutRoute from '../components/AppRoot/AsyncAboutRoute';
-import Error404 from '../components/AppRoot/Error404';
+import AsyncRootRoute from '../components/MainApp/AsyncRootRoute';
+import AsyncHomeRoute from '../components/MainApp/AsyncHomeRoute';
+import AsyncCounterRoute from '../components/MainApp/AsyncCounterRoute';
+import AsyncPostsRoute from '../components/MainApp/AsyncPostsRoute';
+import AsyncAboutRoute from '../components/MainApp/AsyncAboutRoute';
+import Error404 from '../components/MainApp/Error404';
 
 const routes = [
   {
-    component: AppRoot,
+    component: AsyncRootRoute,
     routes: [
       {
         path: '/',
@@ -18,7 +19,7 @@ const routes = [
         component: AsyncCounterRoute,
       },
       {
-        path: '/post',
+        path: '/posts',
         component: AsyncPostsRoute,
       },
       {
