@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 
 import Error404 from '../index';
 
-describe('<Error404 />', () => {
+describe.skip('<Error404 />', () => {
   test('renders', () => {
     const staticContext = {};
     const wrapper = shallow(<Error404 staticContext={staticContext} />);
