@@ -1,18 +1,14 @@
 // Export Constants
-const FETCHING_POST = 'FETCHING_POST';
-const FETCHED_POST = 'FETCHED_POST';
+const ANY_ACTION = 'ANY_ACTION';
 
 // Export Actions
 /* eslint-disable import/prefer-default-export */
-function fetching(cuid) {
-  return { type: FETCHING_POST, payload: cuid };
+export some_action(something) {
+  return { type: ANY_ACTION, payload: something };
 }
 
-function fetched(post) {
-  return { type: FETCHED_POST, payload: post };
-}
-
-export function fetch(cuid) {
+/*
+export function another_action(cuid) {
   return (dispatch, getState, { axios }) => {
     dispatch(fetching(cuid));
 
@@ -30,3 +26,4 @@ export function fetch(cuid) {
     );
   };
 }
+*/
