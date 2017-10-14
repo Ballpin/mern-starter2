@@ -1,11 +1,15 @@
-/* eslint-disable import/prefer-default-export */
+// Export Constants
+const FETCHING_POST = 'FETCHING_POST';
+const FETCHED_POST = 'FETCHED_POST';
 
+// Export Actions
+/* eslint-disable import/prefer-default-export */
 function fetching(cuid) {
-  return { type: 'FETCHING_POST', payload: cuid };
+  return { type: FETCHING_POST, payload: cuid };
 }
 
 function fetched(post) {
-  return { type: 'FETCHED_POST', payload: post };
+  return { type: FETCHED_POST, payload: post };
 }
 
 export function fetch(cuid) {

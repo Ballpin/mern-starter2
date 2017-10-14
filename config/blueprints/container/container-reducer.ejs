@@ -1,14 +1,17 @@
-// Import Actions
-import {  } from './<%= helpers.capitalize(name) %>Actions';
+import { combineReducers } from 'redux';
 
-// Initial State
-const initialState = {};
+// -----------------------------------------------------------------------------
+// REDUCER
 
-const <%= helpers.capitalize(name) %>Reducer = (state = initialState, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
+const <%= name %> = combineReducers({
 
-export default <%= helpers.capitalize(name) %>Reducer;
+});
+
+// -----------------------------------------------------------------------------
+// EXPORTED SELECTORS
+
+
+// -----------------------------------------------------------------------------
+// REDUCER EXPORT
+
+export default <%= name %>;
