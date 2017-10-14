@@ -10,7 +10,7 @@ import Helmet from 'react-helmet';
 import configureStore from '../../../shared/redux/configureStore';
 
 import config from '../../../config';
-import MainApp from '../../../shared/components/MainApp';
+import MainApp from '../../../shared/core/MainApp';
 import ServerHTML from './ServerHTML';
 
 /**

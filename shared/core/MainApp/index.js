@@ -5,13 +5,13 @@ import { renderRoutes } from 'react-router-config';
 
 import Helmet from 'react-helmet';
 
-import config from '../../../config';
+import config from '../../../config/index';
 
-import routes from '../../routes';
+import routes from '../../routes/index';
 
 import './globals.css';
 
-import Header from './Header';
+import Header from '../../components/Header';
 
 function MainApp() {
   return (

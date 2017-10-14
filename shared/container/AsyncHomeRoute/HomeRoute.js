@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import config from '../../../../config';
+import config from '../../../config/index';
 
 function HomeRoute() {
   return (

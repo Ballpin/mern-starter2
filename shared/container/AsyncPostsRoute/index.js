@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
-import Post from './Post';
+import Post from './Post/index';
 
 const AsyncPostsRoute = () =>
   (<div>

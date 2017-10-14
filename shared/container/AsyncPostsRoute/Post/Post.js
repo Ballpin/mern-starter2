@@ -4,8 +4,8 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withJob } from 'react-jobs';
 import Helmet from 'react-helmet';
-import * as PostActions from '../../../../actions/posts';
-import * as FromState from '../../../../reducers';
+import * as PostActions from '../../../actions/posts';
+import * as FromState from '../../../reducers/index';
 
 export function Post({ post }) {
   if (!post) {
