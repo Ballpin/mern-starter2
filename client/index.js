@@ -12,7 +12,7 @@ import configureStore from '../shared/redux/configureStore';
 import './polyfills';
 
 import ReactHotLoader from './components/ReactHotLoader';
-import MainApp from '../shared/components/MainApp';
+import MainApp from '../shared/core/MainApp';
 
 // Get the DOM Element that will host our React application.
 const container = document.querySelector('#app');
@@ -80,7 +80,7 @@ if (process.env.BUILD_FLAG_IS_DEV === 'true' && module.hot) {
   // Accept changes to this file for hot reloading.
   module.hot.accept('./index.js');
   // Any changes to our App will cause a hotload re-render.
-  module.hot.accept('../shared/components/MainApp', () => {
-    renderApp(require('../shared/components/MainApp').default);
+  module.hot.accept('../shared/core/MainApp', () => {
+    renderApp(require('../shared/core/MainApp').default);
   });
 }
