@@ -1,3 +1,9 @@
+### Info abot this repo
+This repository have bene inspired from <https://github.com/Hashnode/mern-starter> and have been changed a bit from the 
+original repo <https://github.com/ctrlplusb/react-universally>
+
+In order to generate components install mern cli <https://github.com/Hashnode/mern-cli> and use the command `merng`
+
 ### Feature Branch
 
 Note: This is a feature branch of `react-universally`. 
