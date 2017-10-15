@@ -1,48 +1,130 @@
 {
   "blueprints": [
     {
-      "name": "dumb-s",
-      "description": "Generates a dumb react component in shared components",
-      "usage": "dumb-s [component-name]",
+      "name": "async-component",
+      "description": "Generates a react-async-component class in shared components.",
+      "usage": "async-component [component-name]",
       "files": [
         {
-          "blueprint-path": "config/blueprints/dumb-component.ejs",
-          "target-path": "client/components/<%= helpers.capitalize(name) %>.js"
+          "blueprint-path": "config/blueprints/async-component/index.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/index.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-component/class-component.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-component/tests/class-component.test.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/__tests__/<%= helpers.capitalize(name) %>.test.js"
         }
       ]
     },
     {
-      "name": "dumb-m",
-      "description": "Generates a dumb react component in a module directory",
-      "usage": "dumb-m <module-name>/<component-name>",
+      "name": "async-sub-component",
+      "description": "Generates a react-async-component class in a existing component.",
+      "usage": "async-sub-component <component-name>/<component-name>",
       "files": [
         {
-          "blueprint-path": "config/blueprints/dumb-component.ejs",
-          "parent-path": "client/modules/<%= helpers.capitalize(parent) %>",
-          "target-path": "components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+          "blueprint-path": "config/blueprints/async-component/index.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/index.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-component/class-component.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-component/tests/class-component.test.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/__tests__/<%= helpers.capitalize(name) %>.test.js"
         }
       ]
     },
     {
-      "name": "functional-s",
+      "name": "component",
+      "description": "Generates a react React.component class in shared components.",
+      "usage": "component [component-name]",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/class-component/class-component.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/index.js"
+        }
+      ]
+    },
+    {
+      "name": "sub-component",
+      "description": "Generates a class sub-component in a existing component.",
+      "usage": "sub-component <component-name>/<component-name>",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/class-component/class-component.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/index.js"
+        }
+      ]
+    },
+    {
+      "name": "async-func-c",
+      "description": "Generates a react-async-component (stateless) in shared components.",
+      "usage": "async-func-c [component-name]",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/async-func-component/index.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/index.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-func-component/functional-component.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-func-component/tests/functional-component.test.ejs",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/__tests__/<%= helpers.capitalize(name) %>.test..js"
+        }
+      ]
+    },
+      {
+      "name": "async-func-sc",
+      "description": "Generates a react async component (stateless) in a existing component.",
+      "usage": "async-func-sc <component-name>/<component-name>",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/async-func-component/index.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "shared/components/<%= helpers.capitalize(name) %>/index.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-func-component/functional-component.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/async-func-component/tests/functional-component.test.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/__tests__/<%= helpers.capitalize(name) %>.test..js"
+        }
+      ]
+    },
+    {
+      "name": "func-c",
       "description": "Generates a functional react component in shared components",
-      "usage": "functional-s [component-name]",
+      "usage": "func-c [component-name]",
       "files": [
         {
-          "blueprint-path": "config/blueprints/functional-component.ejs",
-          "target-path": "client/components/<%= helpers.capitalize(name) %>.js"
+          "blueprint-path": "config/blueprints/stateless-component/functional-component.ejs",
+          "target-path": "client/components/<%= helpers.capitalize(name) %>/index.js"
         }
       ]
     },
     {
-      "name": "functional-m",
-      "description": "Generates a functional react component in a module directory",
-      "usage": "functional-m <module-name>/<component-name>",
+      "name": "func-sc",
+      "description": "Generates a functional react sub-component in a existing component",
+      "usage": "func-sc <component-name>/<component-name>",
       "files": [
         {
-          "blueprint-path": "config/blueprints/functional-component.ejs",
-          "parent-path": "client/modules/<%= helpers.capitalize(parent) %>",
-          "target-path": "components/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
+          "blueprint-path": "config/blueprints/stateless-component/functional-component.ejs",
+          "parent-path": "shared/components/<%= helpers.capitalize(parent) %>",
+          "target-path": "/<%= helpers.capitalize(name) %>/<%= helpers.capitalize(name) %>.js"
         }
       ]
     },
@@ -69,15 +151,34 @@
         },
         {
           "blueprint-path": "config/blueprints/container/controller.ejs",
-          "target-path": "server/controllers/<%= name %>.controller.js"
+          "target-path": "server/api/controllers/<%= name %>.controller.js"
         },
         {
           "blueprint-path": "config/blueprints/container/express-route.ejs",
-          "target-path": "server/routes/<%= name %>.routes.js"
+          "target-path": "server/api/routes/<%= name %>.routes.js"
         },
         {
           "blueprint-path": "config/blueprints/container/model.ejs",
-          "target-path": "server/models/<%= name %>.js"
+          "target-path": "server/api/models/<%= name %>.js"
+        }
+      ]
+    },
+    {
+      "name": "api-route",
+      "description": "Generates server api route with a model and a controller",
+      "usage": "api-route <route-name>",
+      "files": [
+        {
+          "blueprint-path": "config/blueprints/container/controller.ejs",
+          "target-path": "server/api/controllers/<%= name %>.controller.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/container/express-route.ejs",
+          "target-path": "server/api/routes/<%= name %>.routes.js"
+        },
+        {
+          "blueprint-path": "config/blueprints/container/model.ejs",
+          "target-path": "server/api/models/<%= name %>.js"
         }
       ]
     }

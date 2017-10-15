@@ -4,11 +4,16 @@ import PropTypes from 'prop-types';
 class <%= helpers.capitalize(name) %> extends Component {
   render() {
     return (
+      <div>
+        <p>Hello from <%= helpers.capitalize(name) %> Component!</p>
+      </div>
     );
   }
 }
 
+/* Remove this if you need proptypes
 <%= helpers.capitalize(name) %>.propTypes = propTypes = {
 };
+*/
 
 export default <%= helpers.capitalize(name) %>;

@@ -16,7 +16,7 @@ import config from '../config';
 import dummyData from './dummyData';
 
 // Server Routes
-import PostRoutes from './routes/Post.routes';
+import PostRoutes from './api/routes/Post.routes';
 
 // Create our express based server.
 const app = express();
