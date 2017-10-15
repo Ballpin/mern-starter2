@@ -2,7 +2,6 @@
 
 import express from 'express';
 import compression from 'compression';
-import mongoose from 'mongoose';
 import { resolve as pathResolve } from 'path';
 import appRootDir from 'app-root-dir';
 import bodyParser from 'body-parser';
@@ -12,11 +11,12 @@ import clientBundle from './middleware/clientBundle';
 import serviceWorker from './middleware/serviceWorker';
 import offlinePage from './middleware/offlinePage';
 import errorHandlers from './middleware/errorHandlers';
+
 import config from '../config';
-import dummyData from './dummyData';
+import dummyData from './mongoose/dummyData';
 
 // Server Routes
-import PostRoutes from './api/routes/Post.routes';
+import PostRoutes from './api/routes/post.routes';
 
 // Create our express based server.
 const app = express();
@@ -27,23 +27,15 @@ app.disable('x-powered-by');
 // Security middlewares.
 app.use(...security);
 
-// MongoDB Connection
-mongoose.connect(config('db.mongoURL'), (error) => {
-  if (error) {
-    console.error('Please make sure Mongodb is installed and running!'); // eslint-disable-line no-console
-    throw error;
-  }
-
-  // feed some dummy data in DB.
-  dummyData();
-});
-
 // Gzip compress the responses.
 app.use(compression());
 
 // Parse incoming bodys requests.
 app.use(bodyParser.json({ limit: '20mb' }));
 app.use(bodyParser.urlencoded({ limit: '20mb', extended: false }));
+
+// MongoDB Connection - Feed with db with dummy data
+dummyData();
 
 // API Routes
 app.use('/api', PostRoutes);

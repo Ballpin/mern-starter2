@@ -1,7 +1,7 @@
 import sanitizeHtml from 'sanitize-html';
 import cuid from 'cuid';
 import slug from 'limax';
-import Post from '../models/Post';
+import Post from '../models/post';
 
 /**
  * Get all posts

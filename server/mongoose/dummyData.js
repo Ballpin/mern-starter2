@@ -1,6 +1,8 @@
-import Post from './api/models/post';
+import db from './index';
 
-export default function () {
+function dummyData() {
+  const Post = db.model('Post');
+
   Post.count().exec((err, count) => {
     if (count > 0) {
       return;
@@ -56,3 +58,5 @@ export default function () {
     });
   });
 }
+
+export default dummyData;
